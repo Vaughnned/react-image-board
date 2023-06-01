@@ -1,0 +1,16 @@
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+form input {
+  width: 100%;
+  margin: 10px;
+}
+
+form textarea {
+  width: 100%;
+}
