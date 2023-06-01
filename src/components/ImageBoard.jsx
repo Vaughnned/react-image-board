@@ -1,13 +1,20 @@
 import { useState } from "react";
-import ImageForm from "./Image";
+import ImageForm from "./ImageForm";
 
 export default function ImageBoard() {
-  const [image, setImage] = useState("");
+  const [imageList, setImageList] = useState([]);
 
   return (
     <div>
       <h1>Image Board</h1>
-      <ImageForm imgURL={image} changeURL={setImage} />
+      <ImageForm
+        listOfImages={imageList}
+        // changeList={setImageList}
+        // imageURL={image}
+        // changeURL={setImage}
+        // imageCaption={caption}
+        // changeCaption={setCaption}
+      />
       {/* <ImageList img={image} /> */}
     </div>
   );
