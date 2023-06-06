@@ -1,16 +1,16 @@
 import React, { useState } from "react";
 
-export default function ImageForm(props) {
-  const [imageUrl, setImageUrl] = useState("");
+export default function ImageForm({ imageList, setImageList }) {
+  const [url, setUrl] = useState("");
   const [caption, setCaption] = useState("");
 
-  console.log(imageUrl);
+  console.log(url);
   console.log(caption);
 
   function handleImageSubmission(event) {
     event.preventDefault();
-    console.log(props.listOfImages);
-    props.listOfImages.push({ imageUrl: imageUrl, caption: caption });
+    const newImage = { url: url, caption: caption };
+    setImageList([newImage, ...imageList]);
   }
 
   return (
@@ -20,8 +20,8 @@ export default function ImageForm(props) {
         <input
           type="url"
           placeholder="Image URL"
-          value={imageUrl}
-          onChange={(event) => setImageUrl(event.target.value)}
+          value={url}
+          onChange={(event) => setUrl(event.target.value)}
         />
         <label>Image Caption</label>
         <input
